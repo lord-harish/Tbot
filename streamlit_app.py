@@ -1,5 +1,29 @@
 from pathlib import Path
+import os
+import subprocess
+import sys
 import tempfile
+
+PROJECT_ROOT = Path(__file__).resolve().parent
+VENV_PYTHON = PROJECT_ROOT / "venv" / "Scripts" / "python.exe"
+
+if (
+    os.name == "nt"
+    and VENV_PYTHON.exists()
+    and Path(sys.executable).resolve() != VENV_PYTHON.resolve()
+):
+    subprocess.run(
+        [str(VENV_PYTHON), "-m", "streamlit", "run", str(Path(__file__).resolve()), *sys.argv[1:]],
+        check=False,
+    )
+    sys.exit()
+
+if __name__ == "__main__" and "streamlit" not in sys.modules:
+    subprocess.run(
+        [sys.executable, "-m", "streamlit", "run", str(Path(__file__).resolve()), *sys.argv[1:]],
+        check=False,
+    )
+    sys.exit()
 
 import streamlit as st
 

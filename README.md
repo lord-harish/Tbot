@@ -84,7 +84,12 @@ Or run with the project virtual environment directly:
 ### Run the Web App Locally
 For the mobile-friendly browser version:
 ```powershell
-.\venv\Scripts\streamlit.exe run streamlit_app.py
+.\run_web.bat
+```
+
+Or run with the project virtual environment directly:
+```powershell
+.\venv\Scripts\python.exe -m streamlit run streamlit_app.py
 ```
 
 Then open the local URL shown in the terminal.
