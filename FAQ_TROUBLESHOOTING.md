@@ -14,7 +14,7 @@
 2. Make sure it's currently active (not revoked)
 3. Check `.env` file has correct key (no extra spaces)
 4. Restart the application
-5. Test in quickstart.py: `python quickstart.py`
+5. Test in quickstart.py: `.\venv\Scripts\python.exe quickstart.py`
 
 ### Q: Why is analysis taking so long?
 **A:** Gemini Pro takes time for complex analysis:
@@ -117,8 +117,8 @@ cat .env  # Linux/Mac
 **Solutions:**
 1. ✅ Run setup script: `setup.bat` or `setup.sh`
 2. ✅ Or manually install:
-```bash
-pip install -r requirements.txt
+```powershell
+.\venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
 
 3. ✅ Check Python version:
@@ -128,8 +128,8 @@ python --version
 ```
 
 4. ✅ Try running directly:
-```bash
-python main.py
+```powershell
+.\venv\Scripts\python.exe main.py
 ```
 
 5. ✅ Check error log:

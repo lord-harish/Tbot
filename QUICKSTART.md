@@ -28,8 +28,8 @@ chmod +x setup.sh
 4. Save file
 
 ### Step 4: Run the App
-```bash
-python main.py
+```powershell
+.\run.bat
 ```
 
 ---
@@ -131,9 +131,9 @@ RESISTANCE LEVELS: 1.0950, 1.0980, 1.1020
 
 ### App won't start
 ✅ Solution:
-1. Run: `python main.py`
+1. Run: `.\run.bat` on Windows, or `.\venv\Scripts\python.exe main.py`
 2. Check error in terminal
-3. Verify all dependencies: `pip install -r requirements.txt`
+3. Verify all dependencies in the virtual environment: `.\venv\Scripts\python.exe -m pip install -r requirements.txt`
 4. Check Python version: `python --version` (need 3.8+)
 
 ### Image upload fails

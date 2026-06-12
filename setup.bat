@@ -55,6 +55,6 @@ echo ============================================
 echo.
 echo Next steps:
 echo 1. Edit .env file and add your GEMINI_API_KEY
-echo 2. Run: python main.py
+echo 2. Run: run.bat
 echo.
 pause

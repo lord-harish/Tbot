@@ -72,8 +72,13 @@ pip install -r requirements.txt
    ```
 
 ### Step 5: Run Application
-```bash
-python main.py
+```powershell
+.\run.bat
+```
+
+Or run with the project virtual environment directly:
+```powershell
+.\venv\Scripts\python.exe main.py
 ```
 
 ## Usage
