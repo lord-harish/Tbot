@@ -118,7 +118,7 @@ cat .env  # Linux/Mac
 1. ✅ Run setup script: `setup.bat` or `setup.sh`
 2. ✅ Or manually install:
 ```powershell
-.\venv\Scripts\python.exe -m pip install -r requirements.txt
+.\venv\Scripts\python.exe -m pip install -r requirements-desktop.txt
 ```
 
 3. ✅ Check Python version:

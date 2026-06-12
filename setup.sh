@@ -27,7 +27,7 @@ source venv/bin/activate
 
 echo ""
 echo "Step 3: Installing dependencies..."
-pip install -r requirements.txt
+pip install -r requirements-desktop.txt
 
 if [ $? -ne 0 ]; then
     echo "ERROR: Failed to install dependencies"

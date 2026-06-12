@@ -29,7 +29,7 @@ call venv\Scripts\activate.bat
 
 echo.
 echo Step 3: Installing dependencies...
-pip install -r requirements.txt
+pip install -r requirements-desktop.txt
 if %errorlevel% neq 0 (
     echo ERROR: Failed to install dependencies
     pause

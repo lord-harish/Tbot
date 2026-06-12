@@ -1,6 +1,6 @@
-# Forex Trading Bot - AI Chart Analyzer
+# Tbot
 
-A Python desktop application that uses Google Gemini Pro AI to analyze forex charts and predict market movements.
+A Python desktop and web application that uses Google Gemini AI to analyze forex charts and predict market movement scenarios.
 
 ## Features
 
@@ -60,7 +60,7 @@ venv\Scripts\activate  # Windows
 
 ### Step 3: Install Dependencies
 ```bash
-pip install -r requirements.txt
+pip install -r requirements-desktop.txt
 ```
 
 ### Step 4: Setup API Key
@@ -81,7 +81,7 @@ Or run with the project virtual environment directly:
 .\venv\Scripts\python.exe main.py
 ```
 
-### Run the Web App Locally
+### Run Tbot Web Locally
 For the mobile-friendly browser version:
 ```powershell
 .\run_web.bat
@@ -146,7 +146,8 @@ All analyses are stored locally in SQLite:
 forex_bot/
 ├── main.py                    # Entry point
 ├── config.py                  # Configuration
-├── requirements.txt           # Dependencies
+├── requirements.txt           # Web deployment dependencies
+├── requirements-desktop.txt   # Desktop app dependencies
 ├── .env.example               # Environment template
 ├── README.md                  # This file
 ├── ui/

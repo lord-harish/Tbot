@@ -1,4 +1,4 @@
-# 🚀 GETTING STARTED GUIDE - Forex Trading Bot
+# GETTING STARTED GUIDE - Tbot
 
 ## ⚡ Quick Setup (5 minutes)
 
@@ -140,7 +140,7 @@ RESISTANCE LEVELS: 1.0950, 1.0980, 1.1020
 ✅ Solution:
 1. Run: `.\run.bat` on Windows, or `.\venv\Scripts\python.exe main.py`
 2. Check error in terminal
-3. Verify all dependencies in the virtual environment: `.\venv\Scripts\python.exe -m pip install -r requirements.txt`
+3. Verify all desktop dependencies in the virtual environment: `.\venv\Scripts\python.exe -m pip install -r requirements-desktop.txt`
 4. Check Python version: `python --version` (need 3.8+)
 
 ### Image upload fails

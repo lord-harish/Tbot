@@ -8,7 +8,7 @@ GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
 TRADINGVIEW_API_KEY = os.getenv('TRADINGVIEW_API_KEY', '')
 
 # Application Configuration
-APP_TITLE = "Forex Trading Bot - AI Chart Analyzer"
+APP_TITLE = "Tbot"
 APP_VERSION = "1.0.0"
 APP_WIDTH = 1400
 APP_HEIGHT = 900

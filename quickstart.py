@@ -80,7 +80,7 @@ This guide will help you get started.
     print("\nStep 1: Checking dependencies...")
     if not verify_installation():
         print("\n⚠️  Some dependencies are missing!")
-        print("Run: pip install -r requirements.txt")
+        print("Run: pip install -r requirements-desktop.txt")
         return
     
     # Check API Key
