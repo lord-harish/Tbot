@@ -32,6 +32,13 @@ chmod +x setup.sh
 .\run.bat
 ```
 
+### Optional: Run the Mobile-Friendly Web App
+```powershell
+.\venv\Scripts\streamlit.exe run streamlit_app.py
+```
+
+For online mobile access, deploy `streamlit_app.py` from your GitHub repo on Streamlit Community Cloud and add `GEMINI_API_KEY` in the app secrets.
+
 ---
 
 ## 📊 How to Use

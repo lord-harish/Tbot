@@ -81,6 +81,34 @@ Or run with the project virtual environment directly:
 .\venv\Scripts\python.exe main.py
 ```
 
+### Run the Web App Locally
+For the mobile-friendly browser version:
+```powershell
+.\venv\Scripts\streamlit.exe run streamlit_app.py
+```
+
+Then open the local URL shown in the terminal.
+
+## Deploy Online From GitHub
+
+The easiest way to use this from your phone is Streamlit Community Cloud:
+
+1. Push this project to GitHub.
+2. Go to https://share.streamlit.io/ and sign in with GitHub.
+3. Click **Create app**.
+4. Select your repository and branch.
+5. Set the main file path to:
+   ```text
+   streamlit_app.py
+   ```
+6. Add this secret in the app settings:
+   ```toml
+   GEMINI_API_KEY = "your_real_gemini_key_here"
+   ```
+7. Deploy the app and open the Streamlit URL on your mobile browser.
+
+Do not commit your `.env` file or real API key to GitHub.
+
 ## Usage
 
 1. **Select Forex Pair** - Choose from the dropdown (EURUSD, GBPUSD, etc.)
