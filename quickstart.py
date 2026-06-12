@@ -44,35 +44,28 @@ def verify_installation():
     """Verify all dependencies are installed"""
     print_header("VERIFYING INSTALLATION")
     
-    try:
-        import PyQt6
-        print("✅ PyQt6 installed")
-    except ImportError:
-        print("❌ PyQt6 not installed")
-        return False
+    dependencies = [
+        ("PyQt6", "PyQt6"),
+        ("google.genai", "google-genai"),
+        ("PIL", "Pillow"),
+        ("cv2", "opencv-python"),
+        ("numpy", "numpy"),
+        ("pandas", "pandas"),
+        ("requests", "requests"),
+        ("dotenv", "python-dotenv"),
+        ("sqlalchemy", "SQLAlchemy")
+    ]
     
-    try:
-        import google.genai
-        print("✅ google-genai installed")
-    except ImportError:
-        print("❌ google-genai not installed")
-        return False
-    
-    try:
-        import PIL
-        print("✅ Pillow installed")
-    except ImportError:
-        print("❌ Pillow not installed")
-        return False
-    
-    try:
-        import cv2
-        print("✅ OpenCV installed")
-    except ImportError:
-        print("❌ OpenCV not installed")
-        return False
-    
-    return True
+    all_installed = True
+    for module_name, package_name in dependencies:
+        try:
+            __import__(module_name)
+            print(f"✅ {package_name} installed")
+        except ImportError:
+            print(f"❌ {package_name} not installed")
+            all_installed = False
+            
+    return all_installed
 
 def main():
     print_header("FOREX TRADING BOT - QUICK START")
