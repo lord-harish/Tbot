@@ -1,203 +1,199 @@
-# Tbot
+# Tbot - Forex Chart Analysis AI
 
-A Python desktop and web application that uses Google Gemini AI to analyze forex charts and predict market movement scenarios.
+<div align="center">
 
-## Features
+[![Python](https://img.shields.io/badge/Python-3.8+-3776ab?style=flat-square&logo=python)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.0+-FF4B4B?style=flat-square&logo=streamlit)](https://streamlit.io/)
+[![Google Gemini](https://img.shields.io/badge/Google%20Gemini-Pro-4285F4?style=flat-square&logo=google)](https://makersuite.google.com/)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
-✨ **Core Features:**
-- 📊 Upload forex chart images
-- 🤖 AI-powered analysis using Google Gemini Pro
-- 📈 Technical pattern recognition
-- 🎯 Market movement predictions
-- 💾 Analysis history database
-- 🔍 Support/Resistance detection
-- 📍 Supply/Demand zone identification
-- 🕯️ Candlestick pattern analysis
+A Python desktop and web application that uses **Google Gemini AI** to analyze forex charts and predict market movement scenarios.
 
-## Supported Analysis
+### 🚀 **[Try the Live App Now](https://lord-harish-tbot.streamlit.app)** | 📖 **[View on GitHub](https://github.com/lord-harish/Tbot)**
+
+</div>
+
+---
+
+## ✨ Core Features
+
+- 📊 **Upload forex chart images** - Support for all formats
+- 🤖 **AI-powered analysis** using Google Gemini Pro
+- 📈 **Technical pattern recognition** - Candlesticks, trends, structures
+- 🎯 **Market movement predictions** - UP, DOWN, or CONSOLIDATION
+- 💾 **Analysis history database** - Track all your analyses
+- 🔍 **Support/Resistance detection** - Key price levels
+- 📍 **Supply/Demand zones** - Liquidity identification
+- 🕯️ **Candlestick patterns** - Engulfing, Pinbar, Doji, Hammer
+
+---
+
+## 📊 Supported Analysis
 
 The bot analyzes:
-- **Market Structure** - Trend direction, Higher Highs/Lows
-- **Support & Resistance** - Key price levels
-- **Supply & Demand Zones** - Liquidity pools and rejection areas
-- **Break of Structure (BOS)** - Pattern changes
-- **Candlestick Patterns** - Engulfing, Pinbar, Doji, Hammer
-- **Trend Bias & Momentum** - Strength and direction
-- **Price Predictions** - Next few hours movement with targets
 
-## Supported Pairs
+| Analysis Type | Details |
+|---|---|
+| **Market Structure** | Trend direction, Higher Highs/Lows |
+| **Support & Resistance** | Key price levels |
+| **Supply & Demand Zones** | Liquidity pools and rejection areas |
+| **Break of Structure (BOS)** | Pattern changes |
+| **Candlestick Patterns** | Engulfing, Pinbar, Doji, Hammer |
+| **Trend Bias & Momentum** | Strength and direction |
+| **Price Predictions** | Next few hours movement with targets |
 
-- XAUUSD (Gold)
-- EURUSD
-- GBPUSD
-- USDJPY
-- USDCHF
-- AUDUSD
-- NZDUSD
-- USDCAD
+---
 
-## Timeframes
+## 💱 Supported Pairs & Timeframes
 
-1m, 5m, 15m, 30m, 1h, 4h, 1D, 1W
+### Pairs
+```
+XAUUSD (Gold) | EURUSD | GBPUSD | USDJPY | USDCHF | AUDUSD | NZDUSD | USDCAD
+```
 
-## Installation
+### Timeframes
+```
+1m | 5m | 15m | 30m | 1h | 4h | 1D | 1W
+```
+
+---
+
+## 🎯 Quick Start
 
 ### Prerequisites
 - Python 3.8+
 - Google Gemini Pro API Key (Free tier available)
 
-### Step 1: Clone/Download
-```bash
-git clone <your-repository-url>
-cd forex_bot
-```
+### Installation (5 minutes)
 
-### Step 2: Create Virtual Environment
 ```bash
+# 1. Clone the repository
+git clone https://github.com/lord-harish/Tbot.git
+cd forex_bot
+
+# 2. Create virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
-```
 
-### Step 3: Install Dependencies
-```bash
+# 3. Install dependencies
 pip install -r requirements-desktop.txt
-```
 
-### Step 4: Setup API Key
-1. Get your free Gemini Pro API key from: https://makersuite.google.com/app/apikey
-2. Copy `.env.example` to `.env`
-3. Add your API key:
-   ```
-   GEMINI_API_KEY=your_api_key_here
-   ```
+# 4. Get API key from: https://makersuite.google.com/app/apikey
 
-### Step 5: Run Application
-```powershell
+# 5. Create .env file
+Copy .env.example to .env
+Add: GEMINI_API_KEY=your_key_here
+
+# 6. Run the app
 .\run.bat
 ```
 
-Or run with the project virtual environment directly:
-```powershell
-.\venv\Scripts\python.exe main.py
-```
+---
 
-### Run Tbot Web Locally
-For the mobile-friendly browser version:
-```powershell
-.\run_web.bat
-```
+## 🌐 Deploy Online (Easiest Way)
 
-Or run with the project virtual environment directly:
-```powershell
-.\venv\Scripts\python.exe -m streamlit run streamlit_app.py
-```
+Use **Streamlit Community Cloud** for instant deployment:
 
-Then open the local URL shown in the terminal.
+1. Push to GitHub
+2. Go to https://share.streamlit.io/
+3. Sign in with GitHub
+4. Create app → Select your repo
+5. Main file: `streamlit_app.py`
+6. Add secret: `GEMINI_API_KEY = "your_key"`
+7. Deploy! 🎉
 
-## Deploy Online From GitHub
+**Live at:** https://lord-harish-tbot.streamlit.app
 
-The easiest way to use this from your phone is Streamlit Community Cloud:
+---
 
-1. Push this project to GitHub.
-2. Go to https://share.streamlit.io/ and sign in with GitHub.
-3. Click **Create app**.
-4. Select your repository and branch.
-5. Set the main file path to:
-   ```text
-   streamlit_app.py
-   ```
-6. Add this secret in the app settings:
-   ```toml
-   GEMINI_API_KEY = "your_real_gemini_key_here"
-   ```
-7. Deploy the app and open the Streamlit URL on your mobile browser.
+## 📱 Usage Guide
 
-Do not commit your `.env` file or real API key to GitHub.
+1. **Select Forex Pair** - EURUSD, GBPUSD, etc.
+2. **Select Timeframe** - 1h, 4h, 1D, etc.
+3. **Upload Chart Image** - PNG, JPG, GIF, BMP, WebP
+4. **Click Analyze** - 🚀 Let AI work its magic
+5. **View Results** - Prediction, targets, analysis
+6. **Check History** - All past analyses saved
 
-## Usage
+---
 
-1. **Select Forex Pair** - Choose from the dropdown (EURUSD, GBPUSD, etc.)
-2. **Select Timeframe** - Choose analysis timeframe (1h, 4h, 1D, etc.)
-3. **Upload Chart Image** - Click "Browse Chart Image" and select your chart
-4. **Analyze** - Click "🚀 Analyze Chart"
-5. **View Results** - See prediction, support/resistance levels, and detailed analysis
-6. **History** - Check past analyses in the History tab
-
-## Output
+## 📤 Output & Results
 
 The bot provides:
-- ✅ **Predicted Direction** - UP, DOWN, or CONSOLIDATION
-- 📊 **Confidence Level** - Percentage certainty (0-100%)
-- 🎯 **Price Targets** - Expected price levels
-- 📍 **Support Levels** - Identified support areas
-- 📈 **Resistance Levels** - Identified resistance areas
-- 🔍 **Pattern Analysis** - Identified candlestick patterns
-- 💡 **Detailed Reasoning** - Full technical analysis
 
-## Database
+```
+✅ Predicted Direction     → UP | DOWN | CONSOLIDATION
+📊 Confidence Level        → 0-100%
+🎯 Price Targets           → Entry, Take Profit, Stop Loss
+📍 Support Levels          → Identified areas
+📈 Resistance Levels       → Identified areas
+🔍 Pattern Analysis        → Candlestick patterns found
+💡 Detailed Reasoning      → Full technical analysis
+```
 
-All analyses are stored locally in SQLite:
-- `data/forex_analysis.db` - Contains analysis history
-- Can be queried for pattern statistics and backtesting
+---
 
-## File Structure
+## 🗂️ Project Structure
 
 ```
 forex_bot/
-├── main.py                    # Entry point
+├── main.py                    # Desktop entry point
+├── streamlit_app.py           # Web entry point
 ├── config.py                  # Configuration
-├── requirements.txt           # Web deployment dependencies
-├── requirements-desktop.txt   # Desktop app dependencies
+├── requirements.txt           # Web dependencies
+├── requirements-desktop.txt   # Desktop dependencies
 ├── .env.example               # Environment template
-├── README.md                  # This file
+│
 ├── ui/
-│   └── main_window.py         # PyQt6 GUI
+│   └── main_window.py         # PyQt6 GUI (desktop)
+│
 ├── analysis/
 │   ├── gemini_analyzer.py     # Gemini Pro integration
-│   └── technical_analyzer.py  # Technical analysis
+│   └── technical_analyzer.py  # Technical analysis logic
+│
 ├── database/
-│   └── db_manager.py          # SQLite database
+│   └── db_manager.py          # SQLite database manager
+│
 └── utils/
     └── logger.py              # Logging utility
 ```
 
-## API Keys
+---
+
+## 🔑 API Configuration
 
 ### Google Gemini Pro (Required)
-1. Visit: https://makersuite.google.com/app/apikey
-2. Create new API key
-3. Add to `.env` file as `GEMINI_API_KEY`
-4. Free tier includes generous limits
+- **Get key:** https://makersuite.google.com/app/apikey
+- **Free tier:** Generous limits
+- **Add to .env:** `GEMINI_API_KEY=your_key`
 
 ### TradingView (Optional)
-- For real-time data integration (future feature)
-- Add to `.env` if available
+- For future real-time data integration
 
-## Limitations
+---
 
-- Chart analysis depends on image quality
-- AI predictions are not guaranteed; use with caution
-- For trading, always use proper risk management
-- Not financial advice - trade at your own risk
+## ⚠️ Important Notes
 
-## Troubleshooting
+- **Not Financial Advice** - Use at your own risk
+- **Always use risk management** - Never risk more than you can afford
+- **Chart quality matters** - Clear charts = better analysis
+- **Do your own research** - AI is a tool, not a guarantee
+- **Past performance ≠ Future results**
 
-**"GEMINI_API_KEY not found"**
-- Make sure `.env` file exists in the project directory
-- Check API key is correct in `.env`
-- Restart the application
+---
 
-**Image upload fails**
-- Ensure image is < 10MB
-- Supported formats: JPG, PNG, GIF, BMP, WebP
-- Try a different chart image
+## 🐛 Troubleshooting
 
-**Slow analysis**
-- First run may take longer
-- Gemini Pro takes time for complex analysis
-- Check internet connection
+| Issue | Solution |
+|-------|----------|
+| **"GEMINI_API_KEY not found"** | Check `.env` file exists, verify API key is correct |
+| **Image upload fails** | Ensure image < 10MB, supported format (JPG, PNG, GIF, BMP, WebP) |
+| **Slow analysis** | First run is slower, check internet connection |
+| **App won't start** | Verify all dependencies installed: `pip install -r requirements-desktop.txt` |
 
-## Future Enhancements
+---
+
+## 🚀 Future Enhancements
 
 - 🔄 Real-time price tracking
 - 📱 Mobile app version
@@ -206,28 +202,31 @@ forex_bot/
 - ⏰ Scheduled alerts
 - 📈 Backtesting engine
 - 💼 Portfolio tracking
-
-## Disclaimer
-
-⚠️ **DISCLAIMER**
-- This tool is for educational purposes
-- Not financial advice
-- Always do your own research
-- Use proper risk management
-- Forex trading involves significant risk
-- Past performance ≠ future results
-
-## Support
-
-For issues or questions:
-1. Check the logs in `logs/` directory
-2. Verify API key is active
-3. Ensure all dependencies are installed
-
-## License
-
-MIT License - Feel free to modify and distribute
+- 🌍 Multi-language support
 
 ---
 
-**Happy Trading! 🚀📈**
+## 📞 Support & Issues
+
+- Check `logs/` directory for errors
+- Verify API key is active and valid
+- Ensure all dependencies are installed
+- [Create an Issue](https://github.com/lord-harish/Tbot/issues) for bugs
+
+---
+
+## 📄 License
+
+MIT License - Feel free to use, modify, and distribute
+
+---
+
+<div align="center">
+
+### 🎯 Ready to Analyze? 
+
+### **[Launch Tbot Now](https://lord-harish-tbot.streamlit.app)** 🚀
+
+### Made with ❤️ by [lord-harish](https://github.com/lord-harish)
+
+</div>
