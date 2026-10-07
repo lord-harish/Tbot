@@ -344,7 +344,7 @@ if uploaded_file:
         st.error("Image is larger than the configured 10MB limit.")
         st.stop()
 
-    st.image(uploaded_file, caption=f"{pair} chart", use_container_width=True)
+    st.image(uploaded_file, caption=f"{pair} chart", width="stretch")
 
 analyze = st.button("Run Tbot Analysis", type="primary", disabled=uploaded_file is None)
 st.markdown("</div>", unsafe_allow_html=True)
@@ -365,13 +365,19 @@ if analyze and uploaded_file:
             calendar_context = EconomicCalendar().get_events_for_pair(pair)
 
         st.write("Requesting Gemini analysis")
-        analysis_result = gemini_analyzer.analyze_chart(
-            image_path=image_path,
-            pair=pair,
-            timeframe=timeframe,
-            calendar_context=calendar_context,
-            image_features=image_features,
-        )
+        try:
+            analysis_result = gemini_analyzer.analyze_chart(
+                image_path=image_path,
+                pair=pair,
+                timeframe=timeframe,
+                calendar_context=calendar_context,
+                image_features=image_features,
+            )
+        except Exception as exc:
+            status.update(label="Analysis failed", state="error")
+            st.error(f"AI Analysis could not complete: {exc}")
+            st.info("Tip: Gemini servers may be experiencing temporary high demand or rate limits. Please try again in a few moments.")
+            st.stop()
 
         parsed = gemini_analyzer.parse_analysis_response(analysis_result["raw_analysis"])
 
@@ -441,7 +447,7 @@ with st.expander("Recent analysis history"):
                     }
                     for item in history
                 ],
-                use_container_width=True,
+                width="stretch",
             )
         else:
             st.caption("No saved analyses yet.")

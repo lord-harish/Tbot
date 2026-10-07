@@ -38,7 +38,7 @@ SUPPORTED_IMAGE_FORMATS = ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'webp']
 
 # Gemini Model Configuration
 # Use the current stable Flash model for chart-image analysis by default.
-GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-3.8-flash')
+GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-3.5-flash')
 
 # Economic Calendar Configuration
 ECONOMIC_CALENDAR_ENABLED = os.getenv('ECONOMIC_CALENDAR_ENABLED', 'true').lower() == 'true'

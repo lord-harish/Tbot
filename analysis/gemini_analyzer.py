@@ -45,24 +45,39 @@ class GeminiAnalyzer:
             )
             mime_type = mimetypes.guess_type(image_path)[0] or 'image/png'
             
-            # Call Gemini API with vision capabilities
-            response = self.client.models.generate_content(
-                model=config.GEMINI_MODEL,
-                contents=[
-                    types.Part.from_bytes(
-                        data=image_data,
-                        mime_type=mime_type
-                    ),
-                    prompt
-                ],
-                config=types.GenerateContentConfig(
-                    temperature=0.2,
-                    top_p=0.8,
-                    top_k=32,
-                )
-            )
-            
-            if response.text:
+            # Candidate models: try configured model first, then reliable fallbacks
+            fallback_models = ['gemini-3.5-flash', 'gemini-2.5-flash']
+            models_to_try = [config.GEMINI_MODEL] + [m for m in fallback_models if m != config.GEMINI_MODEL]
+
+            response = None
+            last_error = None
+
+            for model_name in models_to_try:
+                try:
+                    logger.info(f"Attempting chart analysis with model: {model_name}")
+                    response = self.client.models.generate_content(
+                        model=model_name,
+                        contents=[
+                            types.Part.from_bytes(
+                                data=image_data,
+                                mime_type=mime_type
+                            ),
+                            prompt
+                        ],
+                        config=types.GenerateContentConfig(
+                            temperature=0.2,
+                            top_p=0.8,
+                            top_k=32,
+                        )
+                    )
+                    if response and response.text:
+                        logger.info(f"Chart analysis succeeded with model: {model_name}")
+                        break
+                except Exception as e:
+                    last_error = e
+                    logger.warning(f"Model '{model_name}' failed ({e}). Trying fallback model...")
+
+            if response and response.text:
                 analysis_result = {
                     'raw_analysis': response.text,
                     'pair': pair,
@@ -72,6 +87,9 @@ class GeminiAnalyzer:
                 logger.info(f"Chart analysis completed for {pair} {timeframe}")
                 return analysis_result
             else:
+                if last_error:
+                    logger.error(f"All candidate models failed. Last error: {last_error}")
+                    raise last_error
                 logger.error("No response from Gemini API")
                 raise RuntimeError("No response from Gemini API")
                 
